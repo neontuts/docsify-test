@@ -1,2 +1,2 @@
-# docsify-test
+# Docsify Test
 Test out using the docsify platform, which auto-generates a documentation site based on markdown files.
