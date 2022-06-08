@@ -1,0 +1,20 @@
+{
+  "name": "docsify-test",
+  "version": "1.0.0",
+  "description": "Test out using the docsify platform, which auto-generates a documentation site based on markdown files.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neontuts/docsify-test.git"
+  },
+  "keywords": [],
+  "author": "Neon Tuts",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/neontuts/docsify-test/issues"
+  },
+  "homepage": "https://github.com/neontuts/docsify-test#readme"
+}
