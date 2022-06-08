@@ -4,7 +4,8 @@
   "description": "Test out using the docsify platform, which auto-generates a documentation site based on markdown files.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "docsify serve .",
+    "build": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/neontuts/docsify-test/issues"
   },
-  "homepage": "https://github.com/neontuts/docsify-test#readme"
+  "homepage": "https://github.com/neontuts/docsify-test#readme",
+  "dependencies": {
+    "docsify-cli": "^4.4.4"
+  }
 }
