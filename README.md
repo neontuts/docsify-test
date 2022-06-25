@@ -5,8 +5,9 @@ Test out using the docsify platform, which auto-generates a documentation site b
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#github.com/neontuts/docsify-test)
 
 <div id="usersList">
-  <li v-for="user in users">
-    <a :href="user.avatar" target="_blank">{{ `${user.name} (${user.username})` }}</a>
+  <li v-for="user in users" :key="user.username">
+    <img :src="user.avatar" width="40px" height="40px" />
+    <a :href="'#/journeys/' + user.username">{{ user.name }}</a>
   </li>
 </div>
 
