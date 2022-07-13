@@ -1,6 +1,10 @@
+# Share your Experience
+
 Sharing your experience is very simple.
 
 Just follow these steps and you'll be ready to go!:
+
+# Steps to create and share your experience.
 - Create a new .md file in the journeys directory.
  
 - Create a HEADING, for example - ### {usernames}({usersgithubprofile.com}'s Journey
