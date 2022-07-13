@@ -1,6 +1,6 @@
-# Docsify Test
+# Journeys
 
-Test out using the docsify platform, which auto-generates a documentation site based on markdown files.
+You've come to the fun part! Tap ANY name below to see their coding journey and get inspired!!
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#github.com/neontuts/docsify-test)
 
