@@ -1,2 +1,2 @@
 - Pages
-    - <a href="/_pages/journey-book.md">Why We Created this Project!</a>
+    - [Why We Created this Project!](_pages/journey-book.md)
