@@ -10,20 +10,3 @@ You've come to the fun part! Tap ANY name below to see their coding journey and 
     <a :href="'#/journeys/' + user.username">{{ user.name }}</a>
   </li>
 </div>
-
-<script>
-  new Vue({
-    el: '#usersList',
-    data: function() {
-      return {
-        users: null,
-      };
-    },
-    created: function() {
-      fetch("Data.json")
-        .then(res => res.json())
-        .then(data => (this.users = data))
-        .catch(err => console.log(err));
-    }
-  });
-</script>
