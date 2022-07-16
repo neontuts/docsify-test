@@ -24,3 +24,53 @@ const createListElement = ({ name, username }) => {
   li.append(a);
   return li;
 };
+
+// Docsify Configurations
+window.$docsify = {
+  name: "Journey Book",
+  repo: "collab-community/journey-book",
+  themeColor: "#FF6863",
+  loadSidebar: "_layouts/sidebar.md",
+  loadNavbar: "_layouts/navbar.md",
+  homepage: "index.md",
+  relativePath: true,
+  executeScript: true,
+  search: "auto",
+  search: {
+    maxAge: 86400000,
+    paths: "auto",
+    placeholder: "Search",
+    noData: "No Results found!",
+    depth: 6,
+    hideOtherSidebarContent: false,
+  },
+  vueGlobalOptions: {
+    data() {
+      return {
+        users: null,
+      };
+    },
+    created() {
+      fetch("Data.json")
+        .then((response) => response.json())
+        .then((data) => (this.users = sortUsers(data)))
+        .catch((err) => console.log(err));
+    },
+  },
+  plugins: [
+    function (hook, vm) {
+      hook.doneEach(function () {
+        fetch("Data.json")
+          .then((response) => response.json())
+          .then((data) => {
+            const journeysNav = document.getElementById("journeysNav");
+            const sortedUsers = sortUsers(data);
+            sortedUsers.forEach((user) => {
+              journeysNav.appendChild(createListElement(user));
+            });
+          })
+          .catch((err) => console.log(err));
+      });
+    },
+  ],
+};
