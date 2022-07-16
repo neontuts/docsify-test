@@ -32,6 +32,7 @@
   </head>
   <body>
     <div id="app"></div>
+    <script src="main.js"></script>
     <script>
       window.$docsify = {
         name: "Journey Book",
@@ -58,27 +59,28 @@
             };
           },
           created() {
-            const sortUsers = (users) => {
-              const sortedUsers = users.sort((a, b) => {
-                const nameA = a.name.toUpperCase();
-                const nameB = b.name.toUpperCase();
-                if (nameA < nameB) {
-                  return -1;
-                }
-                if (nameA > nameB) {
-                  return 1;
-                }
-                return 0;
-              });
-              return sortedUsers;
-            };
-
             fetch("Data.json")
               .then((response) => response.json())
               .then((data) => (this.users = sortUsers(data)))
               .catch((err) => console.log(err));
           },
         },
+        plugins: [
+          function (hook, vm) {
+            hook.doneEach(function () {
+              fetch("Data.json")
+                .then((response) => response.json())
+                .then((data) => {
+                  const journeysNav = document.getElementById("journeysNav");
+                  const sortedUsers = sortUsers(data);
+                  sortedUsers.forEach((user) => {
+                    journeysNav.appendChild(createListElement(user));
+                  });
+                })
+                .catch((err) => console.log(err));
+            });
+          },
+        ],
       };
     </script>
     <!-- Docsify v4 -->
