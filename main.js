@@ -14,17 +14,6 @@ const sortUsers = (users) => {
   return sortedUsers;
 };
 
-// Function to create a list element for single user.
-const createListElement = ({ name, username }) => {
-  const li = document.createElement("li");
-  const a = document.createElement("a");
-  a.setAttribute("href", `../#/journeys/${username}.md`);
-  a.setAttribute("title", name);
-  a.textContent = name;
-  li.append(a);
-  return li;
-};
-
 // Docsify Configurations
 window.$docsify = {
   name: "Journey Book",
@@ -57,20 +46,4 @@ window.$docsify = {
         .catch((err) => console.log(err));
     },
   },
-  plugins: [
-    function (hook, vm) {
-      hook.doneEach(function () {
-        fetch("Data.json")
-          .then((response) => response.json())
-          .then((data) => {
-            const journeysNav = document.getElementById("journeysNav");
-            const sortedUsers = sortUsers(data);
-            sortedUsers.forEach((user) => {
-              journeysNav.appendChild(createListElement(user));
-            });
-          })
-          .catch((err) => console.log(err));
-      });
-    },
-  ],
 };
