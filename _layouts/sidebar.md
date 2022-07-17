@@ -1,9 +1,5 @@
-<ul>
-  <li>
-    <p>Journeys</p>
-    <ul id="journeysNav"></ul>
-  </li>
-</ul>
+<!--START_SECTION:data-section-->
+<!--END_SECTION:data-section-->
 
 - Pages
 
